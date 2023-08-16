@@ -9,6 +9,10 @@ contract OilAndGas{
       uint256 production;
   }
 
+//In the OilWellCreated event, the _wellName and _operator variables are both indexed. This means that when this event is emitted, the values of these variables will be stored in the event's log and can be used to filter events by well name or operator address.
+
+//In the ProductionChanged event, only the _wellName variable is indexed. This means that when this event is emitted, the value of this variable will be stored in the event's log and can be used to filter events by well name.
+
   mapping(string => OilWell) public wells;
   event OilWellCreated(string indexed _wellName, address indexed _operator);
   event ProductionChanged(string indexed _wellName, uint256 indexed _production);
